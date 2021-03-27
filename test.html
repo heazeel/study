@@ -1,0 +1,62 @@
+<!--
+ * @Description: 
+ * @Author: hezhijie
+ * @Date: 2021-03-19 19:10:01
+ * @LastEditors: hezhijie
+ * @LastEditTime: 2021-03-27 17:55:28
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>absolute + margin auto</title>
+    <style type="text/css">
+        .box{display:flex; height: 100px; flex:1;}
+        .middle{background-color:red; flex:1;}
+        .left{width: 200px;background-color:blue;}
+        .right{width: 200px;background-color:green;}
+        li{
+            background-color:gray;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+   <div class="box" id="box">
+    <div class="left" id="left"></div>
+    <div class="middle" id="middle"></div>
+    <div class="right" id="right"></div>
+   </div>
+   <ul id='ul'>
+    <li id='li1'>1</li>
+    <li id='li2'>2</li>
+    <li id='li3'>3</li>
+   </ul>
+</body>
+<script>
+document.getElementById('li1').addEventListener('click', function(e){
+    console.log('1', e);
+})
+document.getElementById('li2').addEventListener('click', function(e){
+    console.log('2', e);
+})
+document.getElementById('li3').addEventListener('click', function(e){
+    console.log('3', e);
+})
+document.getElementById('ul').addEventListener('click', function(e){
+    let target = e.target;
+    switch(target.id){
+        case 'li1':
+            console.log('1');
+            break;
+        case 'li2':
+            console.log('2');
+            break;
+        case 'li3':
+            console.log('3');
+            break;
+    }
+    e.stopPropagation();
+}, true)
+</script>
+</html>
